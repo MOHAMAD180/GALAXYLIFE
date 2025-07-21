@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>شرکت گلکسی - جذب سرمایه ترید</title>
+    <!-- لینک به فریمورک Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      body {
+        direction: rtl;
+        font-family: 'Tahoma', sans-serif;
+      }
+      /* استایل بخش معرفی */
+      .hero-section {
+        background: url('galaxy-banner.jpg') no-repeat center center;
+        background-size: cover;
+        padding: 120px 0;
+        color: #fff;
+        text-align: center;
+      }
+      .hero-section h1 {
+        font-size: 3rem;
+      }
+      /* استایل دکمه‌ها */
+      .btn-custom {
+        background-color: #007bff;
+        border: none;
+      }
+      /* فاصله‌دهی مناسب برای بخش‌ها */
+      section {
+        padding: 60px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- منوی ناوبری -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">گلکسی</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="تغییر ناوبری">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">خانه</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#investment-info">اطلاعات سرمایه‌گذاری</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#investment-form">فرم سرمایه‌گذاری</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">تماس</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <a href="#" class="mr-2">ورود</a> | <a href="#">ثبت نام</a>
+        </span>
+      </div>
+    </nav>
+
+    <!-- بخش معرفی (Hero Section) -->
+    <section class="hero-section">
+      <div class="container">
+        <h1>به شرکت گلکسی خوش آمدید</h1>
+        <p>جذب سرمایه ترید با حداقل سرمایه‌گذاری 5 میلیون تومان</p>
+        <a href="#investment-form" class="btn btn-lg btn-custom">همین حالا سرمایه‌گذاری کنید</a>
+      </div>
+    </section>
+
+    <!-- بخش اطلاعات سرمایه‌گذاری -->
+    <section id="investment-info">
+      <div class="container">
+        <h2 class="text-center mb-4">چرا سرمایه‌گذاری با شرکت گلکسی؟</h2>
+        <p class="text-center">
+          شرکت گلکسی با بهره‌گیری از تیم متخصص و تحلیل‌های حرفه‌ای در بازار ترید، فرصتی منحصر به فرد برای سرمایه‌گذاران فراهم می‌کند. 
+          در طرح ما، حداقل سرمایه‌گذاری از طرف ما 5 میلیون تومان است تا بتوانید با اطمینان خاطر وارد معاملات شوید.
+        </p>
+      </div>
+    </section>
+
+    <!-- بخش فرم سرمایه‌گذاری -->
+    <section id="investment-form">
+      <div class="container">
+        <h2 class="text-center mb-4">فرم سرمایه‌گذاری</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <form id="investForm">
+              <div class="form-group">
+                <label for="investAmount">مبلغ سرمایه‌گذاری (تومان):</label>
+                <input type="number" class="form-control" id="investAmount" placeholder="مثلاً 5000000" required>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">ثبت سرمایه‌گذاری</button>
+            </form>
+            <div class="mt-3" id="investMessage"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- درگاه پرداخت به صورت Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="paymentModalLabel">پرداخت سرمایه‌گذاری</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="بستن">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             <form id="paymentForm">
+               <div class="form-group">
+                 <label for="cardNumber">شماره کارت:</label>
+                 <input type="text" class="form-control" id="cardNumber" placeholder="شماره کارت خود را وارد کنید" required>
+               </div>
+               <div class="form-group">
+                 <label for="expiryDate">تاریخ انقضا (MM/YY):</label>
+                 <input type="text" class="form-control" id="expiryDate" placeholder="مثلاً ۱۲/۲۵" required>
+               </div>
+               <div class="form-group">
+                 <label for="cvv">CVV:</label>
+                 <input type="text" class="form-control" id="cvv" placeholder="CVV" required>
+               </div>
+               <div class="form-group">
+                 <label for="payAmount">مبلغ پرداختی (تومان):</label>
+                 <input type="number" class="form-control" id="payAmount" readonly>
+               </div>
+               <button type="submit" class="btn btn-success btn-block">پرداخت</button>
+             </form>
+           </div>
+         </div>
+      </div>
+    </div>
+
+    <!-- بخش درباره شرکت -->
+    <section id="about">
+      <div class="container">
+        <h2 class="text-center mb-4">درباره شرکت گلکسی</h2>
+        <p>
+          شرکت گلکسی با فعالیت در زمینه ترید و سرمایه‌گذاری، بستر امن و مطمئنی برای جذب سرمایه و ارائه فرصت‌های معاملاتی فراهم می‌کند.
+          هدف ما ایجاد محیطی شفاف و حرفه‌ای برای سرمایه‌گذاران است تا بتوانند با اطمینان خاطر در راستای رشد مالی خود گام بردارند.
+        </p>
+      </div>
+    </section>
+
+    <!-- بخش تماس -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="text-center mb-4">تماس با ما</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="contactName">نام:</label>
+                <input type="text" class="form-control" id="contactName" required>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">ایمیل:</label>
+                <input type="email" class="form-control" id="contactEmail" required>
+              </div>
+              <div class="form-group">
+                <label for="contactMessage">پیام:</label>
+                <textarea class="form-control" id="contactMessage" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-success btn-block">ارسال پیام</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer class="bg-light py-4">
+      <div class="container text-center">
+        <p>© 2023 شرکت گلکسی. تمامی حقوق محفوظ می‌باشد.</p>
+      </div>
+    </footer>
+
+    <!-- اسکریپت‌های مورد نیاز (jQuery, Popper.js و Bootstrap JS) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      // عملکرد فرم سرمایه‌گذاری
+      document.getElementById("investForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        var investAmount = parseFloat(document.getElementById("investAmount").value);
+        var messageDiv = document.getElementById("investMessage");
+        
+        // حداقل مبلغ سرمایه‌گذاری 5,000,000 تومان است
+        if (investAmount < 5000000) {
+          messageDiv.innerHTML = "<div class='alert alert-danger'>حداقل مبلغ سرمایه‌گذاری باید ۵,۰۰۰,۰۰۰ تومان باشد.</div>";
+        } else {
+          messageDiv.innerHTML = "";
+          // مقدار سرمایه‌گذاری وارد شده را در فیلد مبلغ پرداختی قرار می‌دهیم
+          document.getElementById("payAmount").value = investAmount;
+          // نمایش Modal درگاه پرداخت
+          $('#paymentModal').modal('show');
+        }
+      });
+
+      // عملکرد فرم پرداخت (در Modal)
+      document.getElementById("paymentForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        // در اینجا می‌توانید منطق پرداخت واقعی را متناسب با API درگاه پرداخت اضافه کنید.
+        alert("پرداخت شما با موفقیت انجام شد. متشکریم!");
+        // بستن Modal پرداخت
+        $('#paymentModal').modal('hide');
+        // ریست فرم سرمایه‌گذاری
+        document.getElementById("investForm").reset();
+      });
+
+      // عملکرد فرم تماس (نمایش پیام ساده)
+      document.getElementById("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        alert("پیام شما ارسال شد. به زودی به تماس شما پاسخ خواهیم داد.");
+        this.reset();
+      });
+    </script>
+  </body>
+</html>
