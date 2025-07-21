@@ -1,1 +1,1 @@
-# GALAXYLIFE
+# GALAXY
